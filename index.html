@@ -1,0 +1,29 @@
+<!--
+HTML code for /index page.  It uses jquery/ajax to POST request for incrementing counter.
+-->
+<html>
+<head>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+</head>
+<body>
+<div>
+    <div>
+        <button id="incBtn">Inc Counter</button>
+    </div>
+    <div id="incInfo">
+        Unknown
+    </div>
+</div>
+
+<script>
+    /**
+        Get counter and increment
+    **/
+    $("#incBtn").click(function() {
+        $.post( "/", function( data ) {
+          $( "#incInfo" ).html( data );
+        });
+    });
+</script>
+</body>
+</html>
